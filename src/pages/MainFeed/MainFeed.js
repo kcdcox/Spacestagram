@@ -51,7 +51,6 @@ const MainFeed = props => {
 
     return (
         <div className="main-feed__container" onScroll={(e) => scrollThresholdWatcher(e)}>
-            <button style={{zIndex: 20, position: 'relative'}} onClick={() => dispatch(clearStorage())}>Clear Storage</button>
             <ImageFeed likedFeed={false} />
             <div className="main-feed__background-image"/>
         </div>
