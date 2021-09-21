@@ -42,7 +42,7 @@ const MainFeed = props => {
 
     // Watches for when user scrolls within x pixels from bottom and updates endDate to trigger another image fetch
     const scrollThresholdWatcher = (e) => {
-        const bottom = e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight + 1000;
+        const bottom = e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight + 700;
         if(bottom && prevFeedLength != feedImages.length){
             setPrevFeedLength(feedImages.length);
             dispatch(setFetchDates(moment(startDate).subtract(1, 'day').format("YYYY-MM-DD")));
