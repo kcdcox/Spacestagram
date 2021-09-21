@@ -14,7 +14,7 @@ const MainNav = props => {
             <div className="main-header__max-width-container">
                 <Link to="/">
                     <h3 className="main-header__spacestagram-title-text">    
-                        SPACETAGRAM
+                        SPACESTAGRAM
                     </h3>
                 </Link>
                 <Datepicker />
