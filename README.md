@@ -33,7 +33,7 @@ To run all of the tests, run `npm test`
 To build the app, run `npm run build`
 
 ## Other
-This app was built with [Create React App](https://github.com/facebook/create-react-app), which is sweet! It's then deployed on Heroku @ spacestagram42.herokuapp.com
+This app was built with [Create React App](https://github.com/facebook/create-react-app), which is sweet! It's then deployed on Heroku at https://spacestagram42.herokuapp.com/
 
 This app used the Astronomy Picture of the Day (APOD) API to fetch all it's images and info (https://api.nasa.gov/).
 
