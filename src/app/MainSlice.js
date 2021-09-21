@@ -38,12 +38,6 @@ export const mainSlice = createSlice({
     updateFeedImages: (state, {payload}) => {
         state.feedImages = [...state.feedImages, ...payload];
     },
-    clearStorage: (state) => {
-        state.endDate = null;
-        state.endDate = null;
-        state.likedImages = [];
-        state.feedImages = [];
-    },
     setFetchDates: (state, {payload}) => {
         state.endDate = payload;
         state.startDate =  moment(payload).subtract(6, 'days').format("YYYY-MM-DD");
@@ -57,7 +51,6 @@ export const {
     jumpToDate,
     updateFeedImages,
     setFetchDates,
-    clearStorage,
  } = mainSlice.actions
 
 export default mainSlice.reducer;

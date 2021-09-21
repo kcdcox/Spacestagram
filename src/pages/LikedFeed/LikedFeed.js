@@ -9,6 +9,7 @@ import './LikedFeed.scss'
 const LikedFeed = props => {
     const likedImages = useSelector((state) => state.likedImages);
 
+    // Message rendered when no images have been liked
     const renderNoLikedImagesMessage = (
         <div className="liked-feed__none-liked-message">
             Like Images To View Them Here :) 

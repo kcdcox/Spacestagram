@@ -7,6 +7,7 @@ import Icon from '@mdi/react'
 import { addLikedImage, removeLikedImage } from '../../../../app/MainSlice'
 import './ImageCard.scss';
 
+// Container component for display each nasa image and info
 const ImageCard = props => {
     const dispatch = useDispatch();
     const [isLiked, setIsLiked] = useState(undefined);
@@ -50,7 +51,6 @@ const ImageCard = props => {
                 </div>
                 <p className="image-card__description">{props.image.explanation}</p>
             </div>
-
         </div>
     )
 }

@@ -2,13 +2,13 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ImageCard from './ImageCard';
 import { Provider } from 'react-redux';
-
+import moment from 'moment';
 import configureStore from 'redux-mock-store';
  
 const mockStore = configureStore([]);
 
-describe('The liked photos page', () => {
-  it('does not render message if there are likedImages', () => {
+describe('The Image Card', () => {
+  it('renders the image title and explanation', () => {
     let image = {
       date: "2021-06-24",
       explanation: "Grand design spiral galaxy Messier 99 looks majestic on a truly cosmic scale.",
@@ -26,5 +26,6 @@ describe('The liked photos page', () => {
     render(<Provider store={store}><ImageCard image={image}/></Provider>);
     expect(screen.queryByText('Grand design spiral galaxy Messier 99 looks majestic on a truly cosmic scale.')).toBeInTheDocument();
     expect(screen.queryByText('Messier 99')).toBeInTheDocument();
+    expect(screen.queryByText(moment("2021-06-24").format('MMMM D, YYYY').toUpperCase())).toBeInTheDocument();
   });
 })

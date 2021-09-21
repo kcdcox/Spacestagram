@@ -1,18 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Icon from '@mdi/react'
 import { mdiCardsHeart } from '@mdi/js'
 
 import Datepicker from './Datepicker/Datepicker'
 import './MainNav.scss';
 
+// Is the Main Navigation Component at the top of every page
 const MainNav = props => {
     let location = useLocation();
     const likedImages = useSelector((state) => state.likedImages);
     const [oldLikedImagesCount, setOldLikedImagesCount] = useState();
     const [animateHeart, setAnimateHeart] = useState(false);
 
+    // Animates Heart icon in Main Nav when an image is added to the likes Images
     useEffect(() => {
         if(likedImages.length > oldLikedImagesCount){ setAnimateHeart(true); }
         setOldLikedImagesCount(likedImages.length)

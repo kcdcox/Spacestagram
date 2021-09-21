@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment';
 
-import { clearStorage, updateFeedImages, setFetchDates  } from '../../app/MainSlice';
+import { updateFeedImages, setFetchDates  } from '../../app/MainSlice';
 import ImageFeed from '../../components/shared/Image-Feed/ImageFeed';
 import './MainFeed.scss';
 
@@ -22,15 +22,6 @@ const MainFeed = props => {
         (endDate === null || startDate === null) ? dispatch(setFetchDates(moment().format("YYYY-MM-DD"))) : syncFeedEndDate();
     }, [endDate])
 
-    // Fetches A Week worth of Nasa images based on the andDate (Top of feed Date)
-    const fetchNASAImages = () => {
-        fetch(NASA_URL + NASA_API_KEY + '&start_date=' + startDate + '&end_date=' + endDate).then(res => {
-            return res.json();
-        }).then((data) => {
-            if(Array.isArray(data)){ dispatch(updateFeedImages(data?.reverse())); }
-        });
-    }
-
     // Updates end-date if out of sync with feed, otherwise gets more nasa images
     const syncFeedEndDate = () => {
         if(feedImages.length > 0 && moment(endDate).isAfter(feedImages[feedImages.length - 1]?.date)){
@@ -40,9 +31,20 @@ const MainFeed = props => {
         }
     }
 
-    // Watches for when user scrolls within x pixels from bottom and updates endDate to trigger another image fetch
+    // Fetches A Week worth of Nasa images based on the endDate (Top of feed Date)
+    const fetchNASAImages = () => {
+        fetch(NASA_URL + NASA_API_KEY + '&start_date=' + startDate + '&end_date=' + endDate).then(res => {
+            return res.json();
+        }).then((data) => {
+            if(Array.isArray(data)){ dispatch(updateFeedImages(data?.reverse())); }
+        });
+    }
+
+    // Watches for when user scrolls within 700 pixels of the bottom and updates endDate to trigger another image fetch
     const scrollThresholdWatcher = (e) => {
         const bottom = e.target.scrollHeight - e.target.scrollTop <= e.target.clientHeight + 700;
+        // Triggered when 700px from bottom and comparing prevFeeLength and feedImage.length ensures fetch is called
+        // only once before feedimages is updated upon fetch response
         if(bottom && prevFeedLength != feedImages.length){
             setPrevFeedLength(feedImages.length);
             dispatch(setFetchDates(moment(startDate).subtract(1, 'day').format("YYYY-MM-DD")));

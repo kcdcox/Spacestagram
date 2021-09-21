@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Icon from '@mdi/react'
 import { mdiLoading, mdiImageArea} from '@mdi/js';
 
@@ -8,7 +8,7 @@ import './ImageLoadingCard.scss';
 const ImageLoadingCard = props => {
 
     return (
-        <div className="image-loading-card__container">
+        <div className="image-loading-card__container"  data-testid="image-loading-card">
             <div className="image-loading-card__dummy-image">
                 <Icon className="image-loading-card__loading-icon" 
                     path={mdiLoading}
@@ -27,6 +27,7 @@ const ImageLoadingCard = props => {
                 <div className="image-loading-card__dummy-p1"></div>
                 <div className="image-loading-card__dummy-p2"></div>
                 <div className="image-loading-card__dummy-p3"></div>
+                <div className="image-loading-card__dummy-p4"></div>
             </div>
         </div>
     )

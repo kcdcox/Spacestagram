@@ -8,7 +8,7 @@ import {
 
 import MainNav from './components/shared/Header/MainNav';
 import MainFeed from './pages/MainFeed/MainFeed';
-import LikedFeed from './pages/LikedFeed/LikedFeed'
+import LikedFeed from './pages/LikedFeed/LikedFeed';
 
 function App() {
 

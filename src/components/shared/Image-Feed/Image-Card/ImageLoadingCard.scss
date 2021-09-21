@@ -11,7 +11,7 @@
     background: white;
     border-radius: 3px;
     height: auto;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 
     .image-loading-card__dummy-image{
         display: flex;
@@ -19,7 +19,7 @@
         align-items: center;
         width: 100% ;
         position: relative;
-        height: 50vh;
+        height: 45vh;
         min-height: 250px;
         border: 5px solid lightgrey;
         border-radius: 8px;
@@ -38,9 +38,10 @@
         align-items: flex-start;
         width: 100% ;
         position: relative;
-        height: 20vh;
+        height: 15vh;
         margin-top: 15px;
-        min-height: 100px;
+        padding-top: 5px;
+        min-height: 130px;
         border: 5px solid lightgrey;
         border-radius: 8px;
 
@@ -89,6 +90,22 @@
             0%      { width: 20%; }
             50%     { width: 40%; }
             100%    { width: 20%; }
+        }
+
+        .image-loading-card__dummy-p4{
+            position: relative;
+            height: 15px;
+            background: lightgrey;
+            left: 20px;
+            top: 15px;
+            margin-top: 8px;
+            animation: pulseFOUR 4s infinite;
+        }
+
+        @keyframes pulseFOUR {
+            0%      { width: 10%; }
+            50%     { width: 30%; }
+            100%    { width: 10%; }
         }
     }
 }
