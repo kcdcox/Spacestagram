@@ -1,0 +1,26 @@
+.liked-feed__background-image{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    background-image: url("../../assets/purple-sky.jpg");
+    background-size: cover;
+    background-position: 80% center;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.liked-feed__none-liked-message{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 30px;
+
+}

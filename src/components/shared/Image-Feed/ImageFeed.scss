@@ -1,0 +1,27 @@
+.image-feed__container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+
+    .image-feed__max-width-container{
+        max-width: 800px;
+        height: auto;
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding: 0 25px;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .image-feed__spacer{
+        height: 100px;
+    }
+}

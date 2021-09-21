@@ -1,0 +1,48 @@
+.datepicker__container{
+    height: 100%;
+    width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+    .datepicker__start-date-container{
+        position: relative;
+        margin-top: 5px;
+        width: 360px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ant-picker{
+            cursor: pointer;
+            width: 300px;
+            height: 35px;
+            color: white;
+            background: #ffffff0F;
+            border: none;
+            font-family: 'Work Sans', sans-serif;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom: 2px solid white;
+
+            .ant-picker-input input{
+                color: white;
+                text-align: center;
+            }
+
+            .anticon-calendar{
+                color: white;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 875px) {
+    .datepicker__container{
+        display: none;
+    }
+}
