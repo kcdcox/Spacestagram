@@ -1,3 +1,7 @@
+# Try It Out!
+
+Visit https://spacestagram42.herokuapp.com/ to give the app a try
+
 # Overview
 
 This alluring Instagram-like astronomy app delivers only the very best parts of Instagram — stunning, educational images! Spacestagram uses the NASA Astronomy Picture of the Day (APOD) API to fetch and display stunning astronomical images along with pithy educational explanations. The app features infinite scroll, image like/unlike capability, as well as a "Jump To Date" option, allowing the user to select a day and view any APOD from the past!
